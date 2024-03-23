@@ -1,0 +1,12 @@
+Tampering refers to the unauthorized alteration of data or system functions. It involves modifying data, code, or configurations 
+to undermine the system's intended behavior, potentially leading to unauthorized access, data corruption, or system disruptions.
+
+The secure version prevents tampering vulnerabilities through various measures, including:
+
+  Data Encryption: Encrypting data in transit and at rest makes it difficult for an attacker to modify the data without detection, as they                      would need the decryption key to make meaningful changes.
+  Access Controls: Implementing strict access control measures ensures that only authorized users have the capability to make changes to                        data or system configurations, reducing the risk of unauthorized alterations.
+  Integrity Checks: Techniques like checksums, cryptographic hashes, and digital signatures can detect alterations in data by comparing the                      current state of the data to a known good state or signature.
+  Audit Trails: Maintaining detailed logs of system activity and data access can help in detecting and investigating tampering incidents,                    allowing for quicker response and remediation.
+
+CIA Property Violated
+Tampering primarily violates the Integrity aspect of the CIA (Confidentiality, Integrity, Availability) triad. Integrity ensures that information remains accurate, complete, and reliable. When data or system functions are tampered with, their integrity is compromised, leading to potentially harmful consequences such as misinformation, system malfunctions, or unauthorized actions being taken based on the tampered data. Ensuring integrity is crucial for maintaining trust in system operations and data reliability.
