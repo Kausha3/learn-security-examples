@@ -1,2 +1,25 @@
 - Briefly explain the vulnerability and why the secure version is better at preventing repudiation than the insecure version.
 - What additional security mechanisms can you incorporate to prevent such attacks?
+
+Repudiation in the context of information security refers to the denial by a user of having performed an action or transaction. Non-repudiation mechanisms are put in place to prevent such denials by ensuring that actions cannot be disputed later. A system vulnerable to repudiation attacks may lack the ability to conclusively prove the involvement of users in specific actions, such as creating, modifying, or deleting data.
+
+Vulnerability Explanation:
+Insufficient Logging: If a system does not adequately log user actions, particularly those affecting sensitive data or system configurations, it becomes challenging to trace who did what and when. This lack of detailed logging creates a vulnerability where malicious actions cannot be attributed to the correct user.
+Logs Vulnerable to Tampering: If attackers can alter or delete logs, they can effectively erase any trace of their unauthorized activities, making it impossible to hold them accountable.
+Lack of Audit Policies: Without proper audit policies, there's no systematic approach to reviewing logs and monitoring user activities, making it easier for unauthorized actions to go unnoticed.
+Secure Version Prevention:
+A secure system addresses these vulnerabilities by:
+
+Comprehensive and Immutable Logging: Implementing robust logging mechanisms that capture all significant user actions, ensuring logs are detailed, tamper-evident, and stored securely. This includes who performed the action, what action was performed, and when it was performed.
+Secure Log Storage: Storing logs in a secure, tamper-resistant manner, possibly using cryptographic means to ensure their integrity, and backing them up in a secure, off-site location to prevent loss or tampering.
+Regular Audits: Establishing and enforcing audit policies that regularly review logs and user activities, ensuring that any suspicious activity is quickly identified and investigated.
+Additional Security Mechanisms:
+To further prevent repudiation and ensure non-repudiation, consider:
+
+Digital Signatures: Using digital signatures for transactions and communications to provide a cryptographic proof of origin, authenticity, and integrity of the data, making it difficult for users to deny their actions.
+Access Controls: Implementing strict access controls to ensure that users can only perform actions that are within their permissions, reducing the risk of unauthorized activities that could lead to repudiation issues.
+Timestamping Services: Employing trusted timestamping to ensure that the time and date of transactions or actions are accurately recorded and cannot be disputed.
+Security Awareness Training: Educating users about the importance of their actions and the traceability of those actions within the system can deter malicious behavior and promote accountability.
+Multi-Factor Authentication (MFA): Strengthening the authentication process with MFA ensures that the identity of users performing sensitive actions is more reliably verified, adding an extra layer of non-repudiation.
+Incident Response Plan: Having a plan in place for responding to security incidents, including steps for investigating and attributing unauthorized actions, can help in quickly addressing any repudiation attempts.
+Implementing these mechanisms not only mitigates the risk of repudiation but also strengthens the overall security posture of the system by ensuring that all user actions are accountable and traceable.
