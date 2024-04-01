@@ -1,2 +1,27 @@
 - Briefly explain the vulnerability and why the secure version prevents the vulnerability.
 - What additional security mechanisms can you incorporate to prevent such attacks?
+
+Denial of Service (DoS) attacks aim to make a network service unavailable to its intended users by overwhelming it with a flood of requests or exploiting specific vulnerabilities to crash the system. These attacks can be executed in various forms, such as sending more traffic than a server can handle or exploiting flaws in a software to cause a crash.
+
+Vulnerability Explanation:
+The vulnerabilities leading to DoS attacks often include:
+
+Unnecessary Exposure of Services: Services exposed to the internet without a legitimate need can become targets for attackers. Excessive exposure increases the attack surface, providing more opportunities for attackers to exploit vulnerabilities.
+Lack of Rate Limiting: Without rate limiting, a service does not have a mechanism to control the amount of incoming requests, allowing attackers to send high volumes of traffic or requests, overwhelming the service.
+Failure to Use a Content Delivery Network (CDN): CDNs can distribute the load by serving content from the nearest server to the user, reducing the impact of high traffic volumes. Without a CDN, a single point of service might become overloaded and unable to handle sudden spikes in traffic.
+Secure Version Prevention:
+A secure version would address these vulnerabilities by:
+
+Minimizing Exposure: Services should be exposed to the internet only when absolutely necessary, and with the minimum required access level, thus reducing the attack surface.
+Implementing Rate Limiting: Rate limiting controls the number of requests a user can make to a service in a given time frame, preventing an overload from too many requests.
+Utilizing CDNs: Deploying a CDN can help distribute traffic across multiple servers, preventing any single server from becoming a bottleneck and reducing the impact of volumetric attacks.
+Additional Security Mechanisms:
+To further enhance protection against DoS attacks, you can incorporate:
+
+DDoS Protection Services: These specialized services can detect and mitigate large-scale Distributed Denial of Service (DDoS) attacks, ensuring that your services remain available.
+Load Balancers: Load balancers can distribute traffic evenly across multiple servers, ensuring that no single server bears too much load, and can provide failover capabilities.
+Web Application Firewalls (WAFs): WAFs can help filter out malicious traffic before it reaches your server, offering protection against various attack vectors.
+Geoblocking: Blocking or limiting traffic from regions that do not need access to your services can reduce the potential attack surface.
+Anomaly Detection: Implementing anomaly detection systems can help in identifying unusual traffic patterns or behaviors that might indicate a DoS attack, enabling proactive mitigation.
+Redundancy and Failover Systems: Designing systems for redundancy, with the ability to failover to backup systems, can ensure availability even under attack.
+Incorporating these mechanisms into your security posture can significantly enhance resilience against DoS attacks, ensuring that services remain available to legitimate users even under adverse conditions.
