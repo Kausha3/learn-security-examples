@@ -1,3 +1,20 @@
 Briefly explain the vulnerability and why the secure version prevents the vulnerability.
 Which CIA property does tampering violate?
 What additional security mechanisms can you incorporate?
+
+
+Tampering with data violates the Integrity aspect of the CIA (Confidentiality, Integrity, Availability) triad in information security. Integrity ensures that data is accurate, consistent, and trustworthy over its entire lifecycle, meaning that it has not been altered or tampered with by unauthorized individuals or processes.
+
+Vulnerability Explanation:
+A common vulnerability related to tampering involves insufficient validation or lack of input sanitization, where an attacker manipulates input in a way that changes data, alters system behavior, or executes malicious code. For example, in a web application, if user input is not properly sanitized, an attacker could inject SQL commands (SQL Injection) that the database interprets as legitimate commands, leading to unauthorized data manipulation or exposure.
+
+Secure Version Prevention:
+The secure version would implement strict input validation, sanitization, and encoding mechanisms to ensure that only expected and safe input is processed by the system. For instance, using parameterized queries or prepared statements in databases can prevent SQL Injection by treating user input as data rather than executable code. This approach maintains data integrity by ensuring that the data remains unaltered unless done so by authorized processes.
+
+Additional Security Mechanisms:
+Access Control: Implementing strong access control measures ensures that only authorized users can access or modify data, further protecting against tampering.
+Encryption: Encrypting data at rest and in transit protects the integrity of the data by making it unreadable and unusable to unauthorized users.
+Digital Signatures: Using digital signatures for documents and messages can verify the integrity and authenticity of the data, showing that it has not been tampered with since it was signed.
+Audit Trails: Keeping detailed logs of data access and changes helps in detecting and investigating unauthorized or suspicious activities, aiding in the protection of data integrity.
+Hashing: Applying cryptographic hash functions to data can provide a digital fingerprint, allowing verification of data integrity by comparing hashes before and after data transmission or storage.
+Implementing these security mechanisms alongside the principle of least privilege, where users are given only the minimum levels of access—or permissions—needed to perform their job functions, can significantly reduce the risk of tampering and protect the integrity of data.
